@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="src/style.css">
+   <link rel="stylesheet" href="src/style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+   rel="stylesheet" 
+   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+   crossorigin="anonymous">
    <title>Weather App</title>
 </head>
 <body>
     <div class="container">
+        <div class="weather-app-wrapper">
         <div class="weather-app">
+            <div class="overview">
     <h1>New York, USA</h1>
     <ul>
         <li>Friday 05:00</li>
         <li>Partly Cloudy</li>
     </ul>
+    </div>
     <div class="row">
         <div class="col-md-6">
+            <div class="d-flex weather-temperature">
             <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-            alt="partly-cloudy"/>
-            12°F | °C
+            alt="partly-cloudy"
+            class="float-left"
+            />
+            <div class="float-left">
+            <strong>12</strong>
+             <span class="units">°C | <a href="#">°F </a></span>
+        </div>
+        </div>
         </div>
         <div class="col-md-6">
             <ul>
@@ -33,11 +43,12 @@
             </ul>
         </div>
     </div>
-        <small>
-          <a href="https://github.com/JessInTech/vanilla-weather-app" target="_blank"> Open-source code, </a>by Jess Ryan
-        </small>
+       
     </div>
-
+    <small>
+        <a href="https://github.com/JessInTech/vanilla-weather-app" target="_blank"> Open-source code, </a>by Jess Ryan
+      </small>
+      </div>
 </div>
     <script src="src/app.js"></script>
 </body>

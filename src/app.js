@@ -42,7 +42,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time);
     iconElement.setAttribute(
         "src",
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}@rain-day.png",
+        response.data.condition.description.icon_url,
     );
     iconElement.setAttribute("alt", response.data.condition.description);
 

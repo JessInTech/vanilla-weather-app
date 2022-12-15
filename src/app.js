@@ -31,6 +31,8 @@ function displayTemperature(response) {
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
+
 
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
@@ -38,6 +40,12 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time);
+    iconElement.setAttribute(
+        "src",
+        `https://www.shecodes.io/learn/workshops/885/apis/149/weather/${response.data.weather[0].icon}@2.png`
+    );
+    iconElement.setAttribute("alt", response.data.condition.description);
+
 }
 
 let apiKey = "e60522t3c26b100da57f90o04ea3d53d";

@@ -42,7 +42,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time);
     iconElement.setAttribute(
         "src",
-        response.data.condition.description.icon_url,
+        response.data.condition.icon_url,
     );
     iconElement.setAttribute("alt", response.data.condition.description);
 

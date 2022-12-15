@@ -42,7 +42,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time);
     iconElement.setAttribute(
         "src",
-        `https://www.shecodes.io/learn/workshops/885/apis/149/weather/${response.data.weather[0].icon}`
+        `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}@clear-sky.png`
     );
     iconElement.setAttribute("alt", response.data.condition.description);
 

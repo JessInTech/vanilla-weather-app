@@ -89,7 +89,7 @@ function displayTemperature(response) {
     }
     
 
-getForecast(response.data.coord);
+getForecast(response.data.coordinates);
 
 
 

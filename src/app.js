@@ -30,34 +30,33 @@ function displayForecast() {
     let days = ["Thu", "Fri", "Sat", "Sun"];
     
     let forecastHTML = `<div class="row">`;
-    days.forEach(function(day) {
-        forecastHTML = forecastHTML +  
-        `
-        <div class="col-2">
-        <div class="weather-forecast-date">
-        ${day}
-        </div>
-        <!-- Image Source for the Icon -->
-        <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-        alt=""
-        width="42"
-        />
-        <div class="weather-forecast-temperature">
-        <span class="weather-forecast-temperature-max">
-        18° 
-        </span>    
-        <span class="weather-forecast-temperature-min">
-        12°
-        </span>
-        </div>
-        </div>
-        `;
+        days.forEach(function(day) {
+          forecastHTML = forecastHTML +  
+            `
+            <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            alt=""
+            width="42"
+            />
+            <div class="weather-forecast-temperature">
+            <span class="weather-forecast-temperature-max">18°</span>    
+            <span class="weather-forecast-temperature-min">12°</span>
+            </div>
+            </div>
+            `;
         
-    });
+       });
     
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+}
+
+
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
@@ -86,6 +85,11 @@ function displayTemperature(response) {
         
     }
     
+
+getForecast(response.data.coord);
+
+
+
     function search(city) {
         let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=e60522t3c26b100da57f90o04ea3d53d&units=metric`;

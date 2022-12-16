@@ -24,6 +24,7 @@ function formatDate(timestamp){
 }
 
 
+
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
@@ -96,4 +97,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
-search("New York");

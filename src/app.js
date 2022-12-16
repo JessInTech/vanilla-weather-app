@@ -60,5 +60,16 @@ function handleSubmit(event) {
     search(cityInputElement.value)
 }
 
+function displayCelciusTemperature(event){
+    event.preventDefault();
+    let celciusTemperature = (32°F − 32) × 5/9 = 0°C
+    alert(celciusTemperature)
+
+
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let celciusLink = document.querySelector("#celciusLink");
+celciusLink.addEventListener("click", displayCelciusTemperature);

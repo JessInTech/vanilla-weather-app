@@ -69,3 +69,12 @@ a:link {
 a:visited {
     text-decoration: none;
 }
+
+.weather-temperature .active {
+    color: black;
+    cursor: default;
+}
+
+.weather-temperature .active:hoover {
+   text-decoration: none;
+}

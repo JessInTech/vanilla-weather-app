@@ -69,7 +69,7 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-    let coordElement = document.querySelector("#coord")
+    let coordinatesElement = document.querySelector("#coordinates")
     
     celsiusTemperature = response.data.temperature.current;
     
@@ -89,7 +89,7 @@ function displayTemperature(response) {
     }
     
 
-getForecast(response.data.coord);
+getForecast(response.data.coordinates);
 
 
 

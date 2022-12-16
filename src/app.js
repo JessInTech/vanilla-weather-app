@@ -24,9 +24,9 @@ function formatDate(timestamp){
     return `${day} ${hours}:${minutes}`;
     
 }
-function displayForecast() {
+function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
-    
+console.log(response.data)
     let days = ["Thu", "Fri", "Sat", "Sun"];
     
     let forecastHTML = `<div class="row">`;
@@ -54,9 +54,8 @@ function displayForecast() {
 
 function getForecast(coordinates) {
     let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=38.71667&lon=-9.13333&key=e60522t3c26b100da57f90o04ea3d53d&units=metric
-    `;
-    console.log(apiUrl);
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey} `;
+    axios.get(apiUrl).then(displayForecast);
 }
 
 
@@ -69,11 +68,11 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-    let coordinatesElement = document.querySelector("#coordinates")
+    // let coordinatesElement = document.querySelector("#coordinates")
     
     celsiusTemperature = response.data.temperature.current;
     
-    coordinatesElement = response.data.coordinates;
+    // coordinatesElement = response.data.coordinates;
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
@@ -134,7 +133,7 @@ getForecast(response.data.coordinates);
     let celsiusTemperature = null;
     
     search('New York');
-    displayForecast();
+
     
     let fahreneheitLink = document.querySelector("#fahrenheitLink");
     fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);

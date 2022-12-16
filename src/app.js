@@ -54,7 +54,8 @@ function displayForecast() {
 
 function getForecast(coordinates) {
     let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=38.71667&lon=-9.13333&key=e60522t3c26b100da57f90o04ea3d53d&units=metric
+    `;
     console.log(apiUrl);
 }
 
@@ -88,7 +89,7 @@ function displayTemperature(response) {
     }
     
 
-getForecast(response.data.coordinates);
+getForecast(response.data.coord);
 
 
 

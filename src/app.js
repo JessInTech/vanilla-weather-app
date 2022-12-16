@@ -53,7 +53,6 @@ function displayForecast() {
 }
 
 function getForecast(coordinates) {
-    console.log(coordinates);
     let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=metric`;
     console.log(apiUrl);
@@ -73,7 +72,7 @@ function displayTemperature(response) {
     
     celsiusTemperature = response.data.temperature.current;
     
-    
+    coordinatesElement = response.data.coordinates;
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;

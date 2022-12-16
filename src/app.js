@@ -33,6 +33,8 @@ function displayTemperature(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
+celsiusTemperature = response.data.temperature.current;
+
 
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
@@ -50,7 +52,7 @@ function displayTemperature(response) {
 
 function search(city) {
     let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=e60522t3c26b100da57f90o04ea3d53d&units=imperial`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=e60522t3c26b100da57f90o04ea3d53d&units=metric`;
     axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -60,16 +62,25 @@ function handleSubmit(event) {
     search(cityInputElement.value)
 }
 
-function displayCelciusTemperature(event){
+function displayFahrenheitTemperature(event){
     event.preventDefault();
-    let celciusTemperature = (32°F − 32) × 5/9 = 0°C
-    alert(celciusTemperature)
+    let fahrenheitTemperature =  (celsiusTemperature * 9) / 5 + 32;
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
 
 }
 
+
+
+let celsiusTemperature = null;
+
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let celciusLink = document.querySelector("#celciusLink");
-celciusLink.addEventListener("click", displayCelciusTemperature);
+let fahreneheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+
+search("New York");

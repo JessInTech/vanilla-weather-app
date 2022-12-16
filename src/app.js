@@ -68,11 +68,11 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-    // let coordinatesElement = document.querySelector("#coordinates")
+    let coordinatesElement = document.querySelector("#coordinates")
     
     celsiusTemperature = response.data.temperature.current;
     
-    // coordinatesElement = response.data.coordinates;
+    coordinatesElement = response.data.coordinates;
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
@@ -88,7 +88,7 @@ function displayTemperature(response) {
     }
     
 
-getForecast(response.data.coord);
+getForecast(response.data.coordinates);
 
 
 

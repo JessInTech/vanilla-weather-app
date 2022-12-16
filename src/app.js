@@ -1,5 +1,3 @@
-search('New York');
-displayForecast();
 
 
 function formatDate(timestamp){
@@ -12,7 +10,7 @@ function formatDate(timestamp){
     if (minutes < 10) {
         minutes = `0${minutes}`;
     }
-
+    
     let days = [
         "Sunday", 
         "Monday", 
@@ -21,44 +19,44 @@ function formatDate(timestamp){
         "Thursday", 
         "Friday",
         "Saturday"
-        ];
+    ];
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
-
+    
 }
 function displayForecast() {
-let forecastElement = docuemnt.querySelector("#forecast");
- 
-let days = ["Thu", "Fri", "Sat", "Sun"];
-
-let forecastHTML = `<div class="row">`;
-days.forEach(function(day) {
-    forecastHTML = forecastHTML +  
-    `
-     <div class="col-2">
-     <div class="weather-forecast-date">
-     ${day}
-     </div>
-     <!-- Image Source for the Icon -->
-     <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-     alt=""
-     width="42"
-     />
-     <div class="weather-forecast-temperature">
-     <span class="weather-forecast-temperature-max">
-     18° 
-     </span>    
-     <span class="weather-forecast-temperature-min">
-     12°
-     </span>
-     </div>
-     </div>
-     `;
-
-});
- 
-forecastHTML = forecastHTML + `</div>`;
- forecastElement.innerHTML = forecastHTML;
+    let forecastElement = docuemnt.querySelector("#forecast");
+    
+    let days = ["Thu", "Fri", "Sat", "Sun"];
+    
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function(day) {
+        forecastHTML = forecastHTML +  
+        `
+        <div class="col-2">
+        <div class="weather-forecast-date">
+        ${day}
+        </div>
+        <!-- Image Source for the Icon -->
+        <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+        alt=""
+        width="42"
+        />
+        <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temperature-max">
+        18° 
+        </span>    
+        <span class="weather-forecast-temperature-min">
+        12°
+        </span>
+        </div>
+        </div>
+        `;
+        
+    });
+    
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
 }
 
 function displayTemperature(response) {
@@ -69,7 +67,7 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-
+    
     
     celsiusTemperature = response.data.temperature.current;
     
@@ -128,6 +126,8 @@ function displayTemperature(response) {
     
     let celsiusTemperature = null;
     
+    search('New York');
+    displayForecast();
     
     let fahreneheitLink = document.querySelector("#fahrenheitLink");
     fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);

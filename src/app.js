@@ -54,6 +54,9 @@ function displayForecast() {
 
 function getForecast(coordinates) {
     console.log(coordinates);
+    let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=e60522t3c26b100da57f90o04ea3d53d&units=metric`;
+    console.log(apiUrl);
 }
 
 

@@ -31,7 +31,7 @@ function displayForecast(response) {
 
     let forecastHTML = `<div class="row">`;
 
-        for(let forcastDay of days){
+        for(let forecastDay of days){
             forecastHTML = forecastHTML +  
             `
             <div class="col-2">
@@ -41,22 +41,22 @@ function displayForecast(response) {
             width="42"
             />
             <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${forecastday.temp.max}°</span>    
-            <span class="weather-forecast-temperature-min">${forecastday.temp.min}°</span>
+            <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span>    
+            <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
             </div>
             </div>
             `;
             forecastHTML = forecastHTML + 
             `
             <div class="col-2">
-            <div class="weather-forecast-date">${forecastday.date}</div>
+            <div class="weather-forecast-date">${forecastDay.date}</div>
             <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
             alt=""
             width="42"
             />
             <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${forecastday.temp.max}°</span>    
-            <span class="weather-forecast-temperature-min">${forecastday.temp.min}°</span>
+            <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span>    
+            <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
             </div>
             </div>
             `;

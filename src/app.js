@@ -77,7 +77,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
   let coordinatesElement = document.querySelector("#coordinates");
-  
+
 
   coordinatesElement = response.data.coordinates;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
@@ -109,10 +109,10 @@ function handleSubmit(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
 
-  fahreneheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
+//   fahreneheitLink.classList.add("active");
+//   celsiusLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+//   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 

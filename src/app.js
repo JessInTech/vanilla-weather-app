@@ -29,16 +29,14 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
 
-forecast.forEach(function (forecastDay, index) { 
-    if (index < 6) {
-//   for (let forecastDay of forecast) {
-//     let i = forecast.indexOf(forecastDay);
+  for (let forecastDay of forecast) {
+    let i = forecast.indexOf(forecastDay);
 
     forecastHTML += 
             `
             <div class="col-2">
             <div class="weather-forecast-date">
-            ${formatDay(forecastDay.date)}</div>
+            ${days[i]}</div>
             <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
             alt=""
             width=42"

@@ -39,10 +39,10 @@ function displayForecast(response) {
             <div class="col-2">
             <div class="weather-forecast-date">
             ${days[i]}</div>
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon)",
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
             alt=""
             width="42"
-            />
+            />;
             <div class="weather-forecast-temperature">
             <span class="weather-forecast-temperature-max">${Math.round(
               forecastDay.temperature.maximum
@@ -138,4 +138,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-}

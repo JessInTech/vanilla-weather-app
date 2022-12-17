@@ -104,13 +104,14 @@ function displayTemperature(response) {
     iconElement.setAttribute(
         "src",
         response.data.condition.icon_url,
-        );
-        iconElement.setAttribute("alt", response.data.condition.description);
-        
-    }
+    );
+    iconElement.setAttribute("alt", response.data.condition.description);
     
     console.log('response.data', response.data);
     getForecast(response.data.coordinates);
+
+    }
+ 
 
 
 

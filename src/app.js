@@ -27,10 +27,11 @@ function displayForecast(response) {
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
+  
   let forecastHTML = `<div class="row">`;
-  days.forEach(function(day) {
-     for (let forecastDay of forecast)
-          let i = forecast.indexOf(forecastDay) 
+  
+  for (let forecastDay of forecast) {
+        //   let i = forecast.indexOf(forecastDay) 
         
         forecastHTML += 
                 `
@@ -57,7 +58,7 @@ function displayForecast(response) {
             forecastHTML += `</div>`;
             forecastElement.innerHTML = forecastHTML;
             
-  )};
+  };
     
 
 
@@ -70,6 +71,7 @@ function displayForecast(response) {
 
 
 function getForecast(coordinates) {
+    console.log("got the coords", coordinates);
   let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
@@ -98,14 +100,14 @@ function displayTemperature(response) {
 
   console.log("response.data", response.data);
   getForecast(response.data.coordinates);
-  console.log("got the coords", response.data.coordinates);
+ 
 }
 
 function search(city) {
-  let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=e60522t3c26b100da57f90o04ea3d53d&units=imperial`;
-
-  axios.get(apiUrl).then(displayTemperature);
+    let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=e60522t3c26b100da57f90o04ea3d53d&units=imperial`;
+  
+    axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {

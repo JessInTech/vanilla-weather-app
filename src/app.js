@@ -1,5 +1,5 @@
 
-let days = [
+var days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -25,16 +25,6 @@ function formatDate(timestamp) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
-
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
 
   let forecastElement = document.querySelector("#forecast");
   

@@ -27,8 +27,8 @@ function displayForecast(response) {
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
+  days.forEach(function(day) {
      for (let forecastDay of forecast) {
           let i = forecast.indexOf(forecastDay) 
         

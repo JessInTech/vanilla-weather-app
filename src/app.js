@@ -94,7 +94,7 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
+  let apiKey = "2718952144ed077c12e7c160fb6fc351";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.latatitude}&lon=${coordinates.longitude}&appid={apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayTemperature);

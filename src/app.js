@@ -53,11 +53,11 @@ function displayForecast(response) {
                 </div>
                 </div>
                 `;
-  };
+  }
             forecastHTML += `</div>`;
             forecastElement.innerHTML = forecastHTML;
             
-};
+}
     
 
 

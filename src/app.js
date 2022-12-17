@@ -39,8 +39,8 @@ function displayForecast(response) {
             width="42"
             />
             <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span>    
-            <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
+            <span class="weather-forecast-temperature-max">${forecastDay.temperature.maximum}°</span>    
+            <span class="weather-forecast-temperature-min">${forecastDay.temperature.minimum}°</span>
             </div>
             </div>
             `;
@@ -54,8 +54,8 @@ function displayForecast(response) {
             width="42"
             />
             <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span>    
-            <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
+            <span class="weather-forecast-temperature-max">${forecastDay.temperature.maximum}°</span>    
+            <span class="weather-forecast-temperature-min">${forecastDay.temperature.minimum}°</span>
             </div>
             </div>
             `;

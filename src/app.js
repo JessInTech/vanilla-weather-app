@@ -32,9 +32,6 @@ function displayForecast(response) {
   for (let forecastDay of forecast) {
     let i = forecast.indexOf(forecastDay);
 
-   
-
-
     forecastHTML += `
             <div class="col-2">
             <div class="weather-forecast-date">${days[i]}</div>

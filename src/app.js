@@ -1,14 +1,12 @@
-
 var days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -21,7 +19,6 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
@@ -34,10 +31,9 @@ function displayForecast(response) {
 
   for (let forecastDay of forecast) {
     let i = forecast.indexOf(forecastDay);
+    if (i < 5) {  
 
-
-    forecastHTML +=
-      `
+    forecastHTML += `
             <div class="col-2">
             <div class="weather-forecast-date">${days[i]}</div>
             <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
@@ -45,16 +41,20 @@ function displayForecast(response) {
             width="42"
             />
             <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temperature.maximum)}°</span>    
-            <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temperature.minimum)}°</span>
+            <span class="weather-forecast-temperature-max">${Math.round(
+              forecastDay.temperature.maximum
+            )}°</span>    
+            <span class="weather-forecast-temperature-min">${Math.round(
+              forecastDay.temperature.minimum
+            )}°</span>
             </div>
             </div>
             `;
-  } 
+  }
 
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}
+}}
 
 function getForecast(coordinates) {
   console.log("got the coords", coordinates);

@@ -32,7 +32,7 @@ function displayForecast(response) {
      for (let forecastDay of forecast) {
           let i = forecast.indexOf(forecastDay);
         }
-    if (index < 6) { 
+    if (i < 6) { 
         
         forecastHTML += 
                 `
@@ -40,8 +40,7 @@ function displayForecast(response) {
                 <div class="weather-forecast-date">
                 ${days[i]}</div>
                 <img 
-                src="http//openweathermap.com/img/wn/${
-                    forecastDay.weater[0].icon}@2x.png",
+                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png",
                 alt=""
                 width="42"
                 />;
@@ -55,7 +54,7 @@ function displayForecast(response) {
                 </div>
                 </div>
                 `;
-  )};
+  };
             forecastHTML += `</div>`;
             forecastElement.innerHTML = forecastHTML;
             

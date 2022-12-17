@@ -40,7 +40,7 @@ function displayForecast(response) {
                 <div class="weather-forecast-date">
                 ${days[i]}</div>
                 <img 
-                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png",
+                src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
                 alt=""
                 width="42"
                 />;

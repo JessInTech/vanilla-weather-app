@@ -30,9 +30,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
      for (let forecastDay of forecast) {
-          let i = forecast.indexOf(forecastDay);
-        
-
+          let i = forecast.indexOf(forecastDay) 
         
         forecastHTML += 
                 `

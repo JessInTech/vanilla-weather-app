@@ -57,7 +57,7 @@ function displayForecast(response) {
             forecastHTML += `</div>`;
             forecastElement.innerHTML = forecastHTML;
             
-}
+};
     
 
 
@@ -98,7 +98,7 @@ function displayTemperature(response) {
 
   console.log("response.data", response.data);
   getForecast(response.data.coordinates);
-  console.log("got the coords", coordinates);
+  console.log("got the coords", response.data.coordinates);
 }
 
 function search(city) {

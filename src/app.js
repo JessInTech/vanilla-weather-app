@@ -39,7 +39,7 @@ function displayForecast(response) {
             <div class="weather-forecast-date">${days[i]}</div>
             <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
             alt=""
-            width="72"
+            width=46"
             />
             <div class="weather-forecast-temperature">
             <span class="weather-forecast-temperature-max">${Math.round(

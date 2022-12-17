@@ -34,8 +34,6 @@ function displayForecast(response) {
 //hello
   for (let forecastDay of forecast) {
     let i = forecast.indexOf(forecastDay);
-    if (index < 5)  {
-
 
     forecastHTML +=
       `

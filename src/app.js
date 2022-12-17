@@ -109,8 +109,8 @@ function displayTemperature(response) {
         
     }
     
-
-// getForecast(response.data.coordinates);
+    console.log('response.data', response.data);
+    getForecast(response.data.coordinates);
 
 
 

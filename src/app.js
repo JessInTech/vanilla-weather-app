@@ -1,3 +1,15 @@
+
+var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -9,15 +21,7 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
@@ -29,26 +33,12 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 //hello
   for (let forecastDay of forecast) {
-    forecastHTML =
-      forecastHTML +
+    let i = forecast.indexOf(forecastDay);
+
+    forecastHTML +=
       `
             <div class="col-2">
-            <div class="weather-forecast-date">${forecastDay.date}</div>
-            <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-            alt=""
-            width="42"
-            />
-            <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${forecastDay.temperature.maximum}°</span>    
-            <span class="weather-forecast-temperature-min">${forecastDay.temperature.minimum}°</span>
-            </div>
-            </div>
-            `;
-    forecastHTML =
-      forecastHTML +
-      `
-            <div class="col-2">
-            <div class="weather-forecast-date">${forecastDay.date}</div>
+            <div class="weather-forecast-date">${days[i]}</div>
             <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
             alt=""
             width="42"
@@ -61,7 +51,7 @@ function displayForecast(response) {
             `;
   }
 
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 

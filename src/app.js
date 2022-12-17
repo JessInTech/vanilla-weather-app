@@ -39,11 +39,11 @@ function displayForecast(response) {
     "Sat",
   ];
 
-  days.forEach(function(day){ 
+  days.forEach(function(forecastDay){ 
       forecastHTML += 
               `
               <div class="col-6">
-              <div class="weather-forecast-date">${days}</div>
+              <div class="weather-forecast-date">${day}</div>
               <img 
               src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
               alt=""

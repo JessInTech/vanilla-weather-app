@@ -99,6 +99,7 @@ function displayTemperature(response) {
 
   console.log("response.data", response.data);
   getForecast(response.data.coordinates);
+  console.log("got the coords", coordinates);
 }
 
 function search(city) {

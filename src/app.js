@@ -66,8 +66,8 @@ function displayForecast(response) {
 
 
 
-//   for (let forecastDay of forecast) {
-//     let i = forecast.indexOf(forecastDay);
+  for (let forecastDay of forecast) {
+    let i = forecast.indexOf(forecastDay);
 
 
 

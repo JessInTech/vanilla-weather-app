@@ -34,6 +34,8 @@ function displayForecast(response) {
 //hello
   for (let forecastDay of forecast) {
     let i = forecast.indexOf(forecastDay);
+    if (index < 5)  {
+
 
     forecastHTML +=
       `
@@ -44,8 +46,8 @@ function displayForecast(response) {
             width="42"
             />
             <div class="weather-forecast-temperature">
-            <span class="weather-forecast-temperature-max">${forecastDay.temperature.maximum}°</span>    
-            <span class="weather-forecast-temperature-min">${forecastDay.temperature.minimum}°</span>
+            <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temperature.maximum)}°</span>    
+            <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temperature.minimum)}°</span>
             </div>
             </div>
             `;
@@ -129,5 +131,5 @@ search("New York");
 let fahreneheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius-link");
+let celsiusLink = document.querySelector("#celsiusLink");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);

@@ -131,9 +131,9 @@ let celsiusTemperature = null;
 
 search("New York");
 
-let fahreneheitLink = document.querySelector("#fahrenheitLink");
+let fahreneheitLink = document.querySelector("#fahrenheit-Link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsiusLink");
+let celsiusLink = document.querySelector("#celsius-Link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 

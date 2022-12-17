@@ -31,7 +31,7 @@ function displayForecast(response) {
 
   for (let forecastDay of forecast) {
     let i = forecast.indexOf(forecastDay);
-    if (i < 5) {
+    
 
 
     forecastHTML += `
@@ -56,7 +56,7 @@ function displayForecast(response) {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-}
+
 
 function getForecast(coordinates) {
   console.log("got the coords", coordinates);

@@ -94,8 +94,8 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "e60522t3c26b100da57f90o04ea3d53d";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=e60522t3c26b100da57f90o04ea3d53d&units=imperial`;
+  let apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.latatitude}&lon=${coordinates.longitude}&appid={apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayTemperature);
 }

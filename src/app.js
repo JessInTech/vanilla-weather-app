@@ -38,7 +38,8 @@ function displayForecast(response) {
                 `
                 <div class="col-2">
                 <div class="weather-forecast-date">
-                ${days[i]}</div>
+                ${days[i < 6]}
+                </div>
                 <img 
                 src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
                 alt=""

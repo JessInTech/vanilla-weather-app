@@ -31,6 +31,7 @@ function displayForecast(response) {
 
     let forecastHTML = `<div class="row">`;
 
+        console.log('these are the days', days);
         for(let forecastDay of days){
             forecastHTML = forecastHTML +  
             `

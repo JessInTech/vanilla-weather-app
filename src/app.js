@@ -31,7 +31,10 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   
   forecast.forEach(function (forecastDay, index) {
-
+      
+        for (let forecastDay of forecast) {
+          let i = forecast.indexOf(forecastDay);
+        }
     if (index < 6) { 
         
         forecastHTML += 
@@ -55,19 +58,16 @@ function displayForecast(response) {
                 </div>
                 </div>
                 `;
-    }
-                 });
-        forecastHTML += `</div>`;
-        forecastElement.innerHTML = forecastHTML;
-        
-        }
+  )};
+            forecastHTML += `</div>`;
+            forecastElement.innerHTML = forecastHTML;
+            
+}
+    
 
 
 
 
-
-  for (let forecastDay of forecast) {
-    let i = forecast.indexOf(forecastDay);
 
 
 

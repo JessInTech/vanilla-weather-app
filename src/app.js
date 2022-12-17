@@ -29,14 +29,25 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   
   let forecastHTML = `<div class="row">`;
-  
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+
+
   for (let forecastDay of forecast) {
           let i = forecast.indexOf(forecastDay) 
         
         forecastHTML += 
                 `
                 <div class="col-2">
-                <div class="weather-forecast-date">${days[i]}</div>
+                <div class="weather-forecast-date">${day[i]}</div>
                 <img 
                 src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
                 alt=""
@@ -129,3 +140,4 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("New York");
+displayForecast();

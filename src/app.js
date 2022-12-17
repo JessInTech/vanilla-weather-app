@@ -31,14 +31,12 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   
   for (let forecastDay of forecast) {
-        //   let i = forecast.indexOf(forecastDay) 
+          let i = forecast.indexOf(forecastDay) 
         
         forecastHTML += 
                 `
                 <div class="col-2">
-                <div class="weather-forecast-date">
-                ${days[i]}
-                </div>
+                <div class="weather-forecast-date">${days[i]}</div>
                 <img 
                 src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
                 alt=""
@@ -58,7 +56,7 @@ function displayForecast(response) {
             forecastHTML += `</div>`;
             forecastElement.innerHTML = forecastHTML;
             
-  };
+  }
     
 
 

@@ -37,7 +37,7 @@ function displayForecast(response) {
             <div class="col-2">
             <div class="weather-forecast-date">
             ${days[i]}</div>
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon)"
             alt=""
             width=42"
             />
@@ -131,9 +131,8 @@ let celsiusTemperature = null;
 
 search("New York");
 
-let fahreneheitLink = document.querySelector("#fahrenheit-Link");
+let fahreneheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius-Link");
+let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-

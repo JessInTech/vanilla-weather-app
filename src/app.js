@@ -1,4 +1,13 @@
 
+    var days = [
+        "Sunday", 
+        "Monday", 
+        "Tuesday", 
+        "Wednesday", 
+        "Thursday", 
+        "Friday",
+        "Saturday"
+    ];
 
 function formatDate(timestamp){
     let date = new Date(timestamp);
@@ -11,15 +20,6 @@ function formatDate(timestamp){
         minutes = `0${minutes}`;
     }
     
-    let days = [
-        "Sunday", 
-        "Monday", 
-        "Tuesday", 
-        "Wednesday", 
-        "Thursday", 
-        "Friday",
-        "Saturday"
-    ];
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
     
@@ -31,7 +31,7 @@ function displayForecast(response) {
 
     let forecastHTML = `<div class="row">`;
 
-        console.log('these are the days', days);
+
         for(let forecastDay of days){
             forecastHTML = forecastHTML +  
             `

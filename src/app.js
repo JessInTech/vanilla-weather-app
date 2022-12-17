@@ -31,9 +31,10 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-//hello
+
   for (let forecastDay of forecast) {
     let i = forecast.indexOf(forecastDay);
+
 
     forecastHTML +=
       `
@@ -49,7 +50,7 @@ function displayForecast(response) {
             </div>
             </div>
             `;
-  }
+  } 
 
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;

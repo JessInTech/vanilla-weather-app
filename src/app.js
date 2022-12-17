@@ -37,7 +37,7 @@ function displayForecast(response) {
     forecastHTML += `
             <div class="col-2">
             <div class="weather-forecast-date">${days[i]}</div>
-            <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/$[icon].png"
+            <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/$[icons].png"
             alt=""
             width=46"
             />

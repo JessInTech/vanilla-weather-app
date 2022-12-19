@@ -50,27 +50,20 @@ function displayForecast(response) {
               )}°</span>    
               <span class="weather-forecast-temperature-min">${Math.round(
                 forecastDay.temperature.minimum
-              )}°</span>
-              </div>
-              </div>
-              `;
-
-  };
-
-  
-            forecastHTML += `</div>`;
-            forecastElement.innerHTML = forecastHTML;
+                )}°</span>
+                </div>
+                </div>
+                `;
+                
+              };
+              
+              
+              forecastHTML += `</div>`;
+              forecastElement.innerHTML = forecastHTML;
+              
+            }
             
-  }
-    
-
-
-
-
-
-
-
-
+            displayForecast();
 
 
 function getForecast(coordinates) {
@@ -134,4 +127,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("New York");
-displayForecast();

@@ -25,39 +25,38 @@ function formatDate(timestamp) {
 }
 
 
-// function displayForecast(response) {
-//   let forecast = response.data.daily;
-//   let forecastElement = document.querySelector("#forecast");
-//   let forecastHTML = `<div class="row">`;
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
 
 
 
-//   days.forEach(function(forecastDay){ 
-//       forecastHTML += 
-//               `
-//               <div class="col-6">
-//               <div class="weather-forecast-date">${day}</div>
-//               <img 
-//               src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
-//               alt=""
-//               width="42"
-//               />;
-//               <div class="weather-forecast-temperature">
-//               <span class="weather-forecast-temperature-max">${Math.round(
-//                 forecastDay.temperature.maximum
-//               )}°</span>    
-//               <span class="weather-forecast-temperature-min">${Math.round(
-//                 forecastDay.temperature.minimum
-//               )}°</span>
-//               </div>
-//               </div>
-//               `;
+  for (let forecastDay of forecast) {
+          let i = forecast.indexOf(forecastDay) 
+      
+      forecastHTML += 
+              `
+              <div class="col-6">
+              <div class="weather-forecast-date">${day}</div>
+              <img 
+              src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
+              alt=""
+              width="42"
+              />;
+              <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">${Math.round(
+                forecastDay.temperature.maximum
+              )}°</span>    
+              <span class="weather-forecast-temperature-min">${Math.round(
+                forecastDay.temperature.minimum
+              )}°</span>
+              </div>
+              </div>
+              `;
 
-//   });
+  };
 
-//   for (let forecastDay of forecast) {
-//           let i = forecast.indexOf(forecastDay) 
-        
   
             forecastHTML += `</div>`;
             forecastElement.innerHTML = forecastHTML;

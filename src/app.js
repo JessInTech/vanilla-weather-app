@@ -38,7 +38,7 @@ function displayForecast(response) {
       forecastHTML += 
               `
               <div class="col-6">
-              <div class="weather-forecast-date">${day}</div>
+              <div class="weather-forecast-date">${days[i]}</div>
               <img 
               src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
               alt=""
@@ -93,7 +93,7 @@ function displayForecast(response) {
               iconElement.setAttribute("src", response.data.condition.icon_url);
               iconElement.setAttribute("alt", response.data.condition.description);
               
-              console.log("response.data", response.data);
+            
               getForecast(response.data.coordinates);
               
             }
@@ -125,5 +125,4 @@ function displayForecast(response) {
             let form = document.querySelector("#search-form");
             form.addEventListener("submit", handleSubmit);
             
-            search("New York");
-            displayForecast();
+            

@@ -40,7 +40,7 @@ function displayForecast(response) {
               <div class="col-6">
               <div class="weather-forecast-date">${days[i]}</div>
               <img 
-              src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}",
+              src="${forecastDay.condition.icon_url}",
               alt=""
               width="42"
               />;

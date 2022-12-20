@@ -1,13 +1,9 @@
 
-var days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+var days = [ ];
+
+for (let i=0; i < 5; i++ ) {
+	days.push(new Date(new Date().getTime() + (86400000* i)).toLocaleString('en-US', {weekday: 'long'}));
+}
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
